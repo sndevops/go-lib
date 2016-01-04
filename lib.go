@@ -8,6 +8,30 @@ import (
 	"unicode/utf8"
 )
 
+var num = []rune("0123456789")
+var lenNum = len(num)
+
+var alpha = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+var lenAlpha = len(alpha)
+
+func randSeq(n int) string {
+	rand.Seed(time.Now().UnixNano())
+	b := make([]rune, n)
+	for i := range b {
+		b[i] = num[rand.Intn(lenNum)]
+	}
+	return string(b)
+}
+
+func randAlpha(n int) string {
+	rand.Seed(time.Now().UnixNano())
+	b := make([]rune, n)
+	for i := range b {
+		b[i] = alpha[rand.Intn(lenAlpha)]
+	}
+	return string(b)
+}
+
 //number of characters in a string, UTF-8 compatible
 func StrLen(s string) int {
 
