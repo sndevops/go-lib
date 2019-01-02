@@ -6,6 +6,8 @@ import (
 	"os"
 	"strconv"
 	"unicode/utf8"
+	"math/rand"
+	"time"
 )
 
 var num = []rune("0123456789")
